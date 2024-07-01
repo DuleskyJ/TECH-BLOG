@@ -1,0 +1,19 @@
+<header>
+  <h1>Tech Blog</h1>
+  {{#if logged_in}}
+    <a href="/dashboard">Dashboard</a>
+    <a href="/logout">Logout</a>
+  {{else}}
+    <a href="/login">Login</a>
+  {{/if}}
+</header>
+<section>
+  {{#each posts}}
+    <article>
+      <h2>{{this.title}}</h2>
+      <p>By {{this.user.username}} on {{this.created_at}}</p>
+      <p>{{this.content}}</p>
+      <a href="/post/{{this.id}}">Read more</a>
+    </article>
+  {{/each}}
+</section>
