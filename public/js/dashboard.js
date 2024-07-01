@@ -1,4 +1,11 @@
-const handleNewPost = async (event) => {
+document.addEventListener('DOMContentLoaded', () => {
+  const newPostForm = document.querySelector('.new-post-form');
+  if (newPostForm) {
+    newPostForm.addEventListener('submit', handleCreatePost);
+  }
+});
+
+const handleCreatePost = async (event) => {
   event.preventDefault();
 
   const title = document.querySelector('#post-title').value.trim();
@@ -18,10 +25,3 @@ const handleNewPost = async (event) => {
     }
   }
 };
-
-document.addEventListener('DOMContentLoaded', () => {
-  const newPostForm = document.querySelector('.new-post-form');
-  if (newPostForm) {
-    newPostForm.addEventListener('submit', handleNewPost);
-  }
-});

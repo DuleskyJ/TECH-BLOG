@@ -1,27 +1,27 @@
-const newPostHandler = async (event) => {
+document.addEventListener('DOMContentLoaded', () => {
+  const loginForm = document.querySelector('.login-form');
+  if (loginForm) {
+    loginForm.addEventListener('submit', loginFormHandler);
+  }
+});
+
+const loginFormHandler = async (event) => {
   event.preventDefault();
 
-  const title = document.querySelector('#post-title').value.trim();
-  const content = document.querySelector('#post-content').value.trim();
+  const username = document.querySelector('#username-login').value.trim();
+  const password = document.querySelector('#password-login').value.trim();
 
-  if (title && content) {
-    const response = await fetch(`/api/posts`, {
+  if (username && password) {
+    const response = await fetch('/api/users/login', {
       method: 'POST',
-      body: JSON.stringify({ title, content }),
+      body: JSON.stringify({ username, password }),
       headers: { 'Content-Type': 'application/json' },
     });
 
     if (response.ok) {
       document.location.replace('/dashboard');
     } else {
-      alert('Failed to create post');
+      alert(response.statusText);
     }
   }
 };
-
-document.addEventListener('DOMContentLoaded', () => {
-  const newPostForm = document.querySelector('.new-post-form');
-  if (newPostForm) {
-    newPostForm.addEventListener('submit', newPostHandler);
-  }
-});
