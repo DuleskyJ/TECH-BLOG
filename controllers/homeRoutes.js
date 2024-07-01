@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
 
     res.render('homepage', { 
       posts, 
-      logged_in: req.session.logged_in 
+      logged_in: req.session.logged_in || false, // Ensure default value if session not set
     });
   } catch (err) {
     res.status(500).json(err);
