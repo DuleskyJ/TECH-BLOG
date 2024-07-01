@@ -1,25 +1,27 @@
-const loginFormHandler = async (event) => {
+const newPostHandler = async (event) => {
   event.preventDefault();
 
-  const username = document.querySelector('#username-login').value.trim();
-  const password = document.querySelector('#password-login').value.trim();
+  const title = document.querySelector('#post-title').value.trim();
+  const content = document.querySelector('#post-content').value.trim();
 
-  if (username && password) {
-    const response = await fetch('/api/users/login', {
+  if (title && content) {
+    const response = await fetch(`/api/posts`, {
       method: 'POST',
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({ title, content }),
       headers: { 'Content-Type': 'application/json' },
     });
 
     if (response.ok) {
-      document.location.replace('/');
+      document.location.replace('/dashboard');
     } else {
-      alert('Failed to log in');
+      alert('Failed to create post');
     }
   }
 };
 
-const loginForm = document.querySelector('.login-form');
-if (loginForm) {
-  loginForm.addEventListener('submit', loginFormHandler);
-}
+document.addEventListener('DOMContentLoaded', () => {
+  const newPostForm = document.querySelector('.new-post-form');
+  if (newPostForm) {
+    newPostForm.addEventListener('submit', newPostHandler);
+  }
+});

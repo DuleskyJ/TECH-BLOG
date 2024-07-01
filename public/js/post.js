@@ -19,7 +19,9 @@ const handleCreatePost = async (event) => {
   }
 };
 
-const newPostFormPost = document.querySelector('.new-post-form');
-if (newPostFormPost) {
-  newPostFormPost.addEventListener('submit', handleCreatePost);
-}
+document.addEventListener('DOMContentLoaded', () => {
+  const newPostForm = document.querySelector('.new-post-form');
+  if (newPostForm) {
+    newPostForm.addEventListener('submit', handleCreatePost);
+  }
+});
