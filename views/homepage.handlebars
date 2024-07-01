@@ -1,11 +1,13 @@
-{{!-- Use the main layout --}}
-{{!< main}}
-
-<h1>Welcome to the Tech Blog</h1>
-{{#each posts}}
-    <div class="post">
-        <h2>{{title}}</h2>
-        <p>{{content}}</p>
-        <small>Posted by {{username}} on {{createdAt}}</small>
-    </div>
-{{/each}}
+{{> header}}
+<div class="container">
+  <h2>All Posts</h2>
+  {{#each posts}}
+  <div class="post">
+    <h3>{{this.title}}</h3>
+    <p>{{this.content}}</p>
+    <small>Posted by {{this.user.username}} on {{format_date this.created_at}}</small>
+    <a href="/post/{{this.id}}">Read more</a>
+  </div>
+  {{/each}}
+</div>
+{{> footer}}
