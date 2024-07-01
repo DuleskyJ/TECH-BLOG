@@ -1,21 +1,24 @@
-{{> header}}
+
 <main>
   <article class="main-post">
     <h2>{{title}}</h2>
     <p>{{content}}</p>
     <p>Posted by {{user.username}} on {{format_date created_at}}</p>
   </article>
+
   <section>
     <form class="comment-form">
       <textarea name="comment-body" placeholder="Add a comment"></textarea>
       <button type="submit">Add Comment</button>
     </form>
+
     {{#each comments}}
       <article class="post">
         <p>{{this.comment_text}}</p>
-        <p>Commented by {{this.user.username}} on {{format_date this.created_at}}</p>
+        <p>Commented by {{this.User.username}} on {{format_date this.created_at}}</p>
       </article>
     {{/each}}
   </section>
 </main>
+
 {{> footer}}
