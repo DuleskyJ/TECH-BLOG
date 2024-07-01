@@ -1,4 +1,4 @@
-const newPostHandler = async (event) => {
+const newPostHandlerLogin = async (event) => {
   event.preventDefault();
 
   const title = document.querySelector('#post-title').value.trim();
@@ -19,4 +19,7 @@ const newPostHandler = async (event) => {
   }
 };
 
-document.querySelector('.new-post-form').addEventListener('submit', newPostHandler);
+const newPostFormLogin = document.querySelector('.new-post-form');
+if (newPostFormLogin) {
+  newPostFormLogin.addEventListener('submit', newPostHandlerLogin);
+}

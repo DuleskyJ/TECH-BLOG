@@ -5,11 +5,9 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "seed": "node seeds/seed.js",
-    "postinstall": "npm rebuild bcrypt --build-from-source"
+    "seed": "node seeds/seed.js"
   },
   "dependencies": {
-    "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
     "connect-session-sequelize": "^7.0.4",
     "dotenv": "^10.0.0",
