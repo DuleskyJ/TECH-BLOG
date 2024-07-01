@@ -1,12 +1,12 @@
 h1, h2, h3 {
-  color: #333;
   margin-bottom: 10px;
 }
 
 body {
   font-family: 'Arial', sans-serif;
+  color: #faf3e0;
   line-height: 1.6;
-  background-color: #f0f0f0; 
+  background-color: #080808; 
   margin: 0;
   padding: 0;
 }
@@ -16,6 +16,13 @@ header {
   color: #8B0000;
   padding: 10px 0;
   text-align: center;
+  font-family: 'Rubik Mono One', sans-serif;
+  font-size: 21px;
+  top: 0;
+  left: 0;
+  padding: 10px 15px;
+  border: 12px solid #8B0000;
+  border-bottom-color: #800000;
 }
 
 footer {
@@ -32,10 +39,27 @@ footer {
   width: 80%;
   max-width: 1200px; 
   margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #fff; 
   padding: 20px;
   border-radius: 8px; 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+.main-post {
+  background-color: #0f0f0f;
+  border: 5px solid #ccc; 
+  padding: 20px; 
+  margin-bottom: 20px; 
+}
+
+.post {
+  background-color: #0f0f0f; 
+  border: 5px solid #ccc; 
+  padding: 20px; 
+  margin-bottom: 20px; 
 }
 
 /* Responsive Design */
