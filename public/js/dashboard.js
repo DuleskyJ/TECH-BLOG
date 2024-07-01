@@ -1,4 +1,4 @@
-const newFormHandler = async (event) => {
+const newPostHandler = async (event) => {
   event.preventDefault();
 
   const title = document.querySelector('#post-title').value.trim();
@@ -8,9 +8,7 @@ const newFormHandler = async (event) => {
     const response = await fetch(`/api/posts`, {
       method: 'POST',
       body: JSON.stringify({ title, content }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: { 'Content-Type': 'application/json' },
     });
 
     if (response.ok) {
@@ -21,6 +19,4 @@ const newFormHandler = async (event) => {
   }
 };
 
-document
-  .querySelector('.new-post-form')
-  .addEventListener('submit', newFormHandler); 
+document.querySelector('.new-post-form').addEventListener('submit', newPostHandler);

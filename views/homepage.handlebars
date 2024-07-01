@@ -1,13 +1,11 @@
 {{> header}}
-<div class="container">
-  <h2>All Posts</h2>
+<main>
   {{#each posts}}
-  <div class="post">
-    <h3>{{this.title}}</h3>
-    <p>{{this.content}}</p>
-    <small>Posted by {{this.user.username}} on {{format_date this.created_at}}</small>
-    <a href="/post/{{this.id}}">Read more</a>
-  </div>
+    <article>
+      <h2><a href="/post/{{this.id}}">{{this.title}}</a></h2>
+      <p>{{this.content}}</p>
+      <p>Posted by {{this.user.username}} on {{format_date this.created_at}}</p>
+    </article>
   {{/each}}
-</div>
+</main>
 {{> footer}}
