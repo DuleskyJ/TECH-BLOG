@@ -41,7 +41,10 @@ Start the server
 
 npm start
 
-Navigate to http://localhost:3001 in your browser to use the application.
+Navigate to http://localhost:3006 in your browser to use the application.
 
 ## License
 This project is licensed under the MIT License.
+
+## Deployed Application 
+https://tech-bloggers-8732df1fc57a.herokuapp.com/ 
