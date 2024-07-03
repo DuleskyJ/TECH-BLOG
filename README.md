@@ -44,7 +44,7 @@ npm start
 Navigate to http://localhost:3006 in your browser to use the application.
 
 ## Screenshot
-![Screenshot (50)](https://github.com/DuleskyJ/TECH-BLOG/assets/153566037/a45fd31e-dec7-4687-bffc-ce68ec9a6093)
+![Screenshot (51)](https://github.com/DuleskyJ/TECH-BLOG/assets/153566037/418c6f6c-ed21-4a9f-a5e4-35ce10e2ea3b)
 
 ## License
 This project is licensed under the MIT License.
